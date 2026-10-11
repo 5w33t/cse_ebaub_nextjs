@@ -73,6 +73,7 @@ working session: move items between sections, add dates, note blockers.
 - 2026-10-11: lucide only in admin; Phosphor light on the public site
 - 2026-10-11: Course content stored structured (CLOs, outline rows, books) rather than one rich-text blob; `courseStatus` (core/elective/ged) is separate from publish `status`
 - 2026-10-11: Seed never overwrites existing documents unless `--force`
+- 2026-10-11: OBE framework, program description/eligibility/intake, curriculum and syllabus content are **English only** (user decision). Their `bn` fields stay empty and render the English fallback. Site chrome, page titles and the program's short name/degree remain bilingual.
 
 ## Notes
 
