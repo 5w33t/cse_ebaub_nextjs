@@ -491,6 +491,42 @@
     { "slug": "general", "name": { "en": "General", "bn": "সাধারণ" } }
   ],
 
+  "contact": {
+    "intro": {
+      "en": "The department office is open on working days. Write to us, call, or visit the Faculty of Engineering building on campus.",
+      "bn": "বিভাগীয় অফিস কর্মদিবসে খোলা থাকে। আমাদের লিখুন, ফোন করুন, অথবা ক্যাম্পাসে প্রকৌশল অনুষদ ভবনে আসুন।"
+    },
+    "formEnabled": true
+  },
+
+  "samples": {
+    "notice": {
+      "title": { "en": "Sample notice (draft, replace me)", "bn": "নমুনা নোটিশ (খসড়া, বদলে দিন)" },
+      "slug": "sample-notice",
+      "category": "general",
+      "content": {
+        "en": "<p>This is a draft placeholder created by the seed script so the admin list is not empty. Delete it once real notices exist.</p>",
+        "bn": "<p>এটি সিড স্ক্রিপ্টের তৈরি একটি খসড়া নমুনা, যাতে অ্যাডমিন তালিকা খালি না থাকে। আসল নোটিশ যুক্ত হলে এটি মুছে ফেলুন।</p>"
+      }
+    },
+    "event": {
+      "title": { "en": "Sample event (draft, replace me)", "bn": "নমুনা অনুষ্ঠান (খসড়া, বদলে দিন)" },
+      "slug": "sample-event",
+      "venue": { "en": "Faculty of Engineering, EBAUB", "bn": "প্রকৌশল অনুষদ, ইবিএইউবি" },
+      "excerpt": { "en": "Draft placeholder created by the seed script.", "bn": "সিড স্ক্রিপ্টের তৈরি খসড়া নমুনা।" },
+      "body": {
+        "en": "<p>Replace this with a real event or news item from the admin panel.</p>",
+        "bn": "<p>অ্যাডমিন প্যানেল থেকে এটিকে একটি আসল অনুষ্ঠান বা সংবাদ দিয়ে বদলে দিন।</p>"
+      }
+    },
+    "researchAreas": [
+      { "title": { "en": "Artificial intelligence and machine learning", "bn": "কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং" }, "description": { "en": "Learning systems, computer vision, generative models and autonomous agents.", "bn": "লার্নিং সিস্টেম, কম্পিউটার ভিশন, জেনারেটিভ মডেল ও স্বয়ংক্রিয় এজেন্ট।" }, "icon": "Brain" },
+      { "title": { "en": "Networks and security", "bn": "নেটওয়ার্ক ও নিরাপত্তা" }, "description": { "en": "Computer networks, cryptography, cloud infrastructure and DevOps.", "bn": "কম্পিউটার নেটওয়ার্ক, ক্রিপ্টোগ্রাফি, ক্লাউড অবকাঠামো ও ডেভঅপস।" }, "icon": "ShieldCheck" },
+      { "title": { "en": "Software engineering and HCI", "bn": "সফটওয়্যার ইঞ্জিনিয়ারিং ও এইচসিআই" }, "description": { "en": "Design patterns, web and mobile systems, user experience design.", "bn": "ডিজাইন প্যাটার্ন, ওয়েব ও মোবাইল সিস্টেম, ইউজার এক্সপেরিয়েন্স ডিজাইন।" }, "icon": "Code" },
+      { "title": { "en": "Embedded systems and robotics", "bn": "এমবেডেড সিস্টেম ও রোবোটিক্স" }, "description": { "en": "Microcontrollers, interfacing, signal processing, robotics and automation.", "bn": "মাইক্রোকন্ট্রোলার, ইন্টারফেসিং, সিগন্যাল প্রসেসিং, রোবোটিক্স ও অটোমেশন।" }, "icon": "Cpu" }
+    ]
+  },
+
   "pageSeo": {
     "academics": { "title": { "en": "Academics", "bn": "একাডেমিক" }, "description": { "en": "Programs offered by the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের প্রোগ্রামসমূহ।" } },
     "curriculum": { "title": { "en": "Curriculum", "bn": "পাঠ্যক্রম" }, "description": { "en": "Eight-semester curriculum of the B.Sc. in CSE program.", "bn": "বি.এসসি. ইন সিএসই প্রোগ্রামের আট সেমিস্টারের পাঠ্যক্রম।" } },

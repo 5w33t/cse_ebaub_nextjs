@@ -4,3 +4,6 @@ export * from "./ui";
 export * from "./home";
 export * from "./mission-vision";
 export * from "./chairman-message";
+export * from "./academics";
+export * from "./people";
+export * from "./content";
