@@ -1,26 +1,271 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Dark mode is driven by next-themes putting `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens: "Editorial Academic"                                 */
+/* Palette is derived from the EBAUB CSE seal: navy, orange, sky blue. */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Brand scale */
+  --color-navy-950: #07172a;
+  --color-navy-900: #0b2a47;
+  --color-navy-800: #0f3d63;
+  --color-navy-700: #164e80;
+  --color-navy-600: #1f629c;
+  --color-orange-500: #f58220;
+  --color-orange-400: #f9a45c;
+  --color-orange-700: #a8480a;
+  --color-sky-500: #1b9bcc;
+  --color-sky-400: #6cc4ea;
+  --color-sky-700: #0e6e96;
+
+  /* Type: Latin face first, Bengali face as the per-glyph fallback. */
+  --font-display: var(--font-fraunces), var(--font-tiro), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), var(--font-noto-bengali), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Fluid type scale */
+  --text-display-xl: clamp(2.75rem, 1.6rem + 4.6vw, 5rem);
+  --text-display-xl--line-height: 1.02;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-lg: clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem);
+  --text-display-lg--line-height: 1.06;
+  --text-display-lg--letter-spacing: -0.015em;
+  --text-display-md: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  --text-display-md--line-height: 1.12;
+  --text-display-md--letter-spacing: -0.01em;
+  --text-display-sm: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  --text-display-sm--line-height: 1.2;
+  --text-lede: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-lede--line-height: 1.5;
+
+  /* Motion: physical easing only. Never linear or ease-in-out. */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Radii for the double-bezel nesting */
+  --radius-shell: 1.75rem;
+  --radius-core: calc(1.75rem - 0.375rem);
+  --radius-frame: 1.5rem;
+  --radius-frame-inner: calc(1.5rem - 0.375rem);
+
+  /* Shadows: diffuse, navy-tinted, never grey-black */
+  --shadow-ambient: 0 24px 60px -24px rgb(11 42 71 / 0.18);
+  --shadow-ambient-lg: 0 40px 90px -32px rgb(11 42 71 / 0.24);
+
+  /* Layout */
+  --container-site: 80rem;
 }
 
+/* Semantic aliases. Components only ever use these. */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-text: var(--secondary-text);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  color-scheme: light;
+  --paper: #fbf9f5;
+  --paper-2: #f4f0e8;
+  --surface: #ffffff;
+  --ink: #0e1726;
+  --ink-muted: #5b6779;
+  --hairline: rgb(14 23 38 / 0.08);
+  --primary: #0f3d63;
+  --primary-hover: #164e80;
+  --primary-foreground: #fbf9f5;
+  --accent: #f58220;
+  --accent-text: #a8480a;
+  --accent-foreground: #07172a;
+  --secondary: #1b9bcc;
+  --secondary-text: #0e6e96;
+  --ring: #1b9bcc;
+  --inset-highlight: rgb(255 255 255 / 0.7);
+  --grain-opacity: 0.035;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: #07111f;
+  --paper-2: #0c1a2e;
+  --surface: #122439;
+  --ink: #e9eef5;
+  --ink-muted: #9aabbf;
+  --hairline: rgb(233 238 245 / 0.1);
+  --primary: #e9eef5;
+  --primary-hover: #ffffff;
+  --primary-foreground: #07172a;
+  --accent: #f58220;
+  --accent-text: #f9a45c;
+  --accent-foreground: #07172a;
+  --secondary: #1b9bcc;
+  --secondary-text: #6cc4ea;
+  --ring: #6cc4ea;
+  --inset-highlight: rgb(255 255 255 / 0.06);
+  --grain-opacity: 0.05;
+}
+
+/* Bangla: Bengali faces become primary, body grows, tracking and caps go away. */
+html[lang="bn"] {
+  --font-display: var(--font-tiro), var(--font-fraunces), serif;
+  --font-sans: var(--font-noto-bengali), var(--font-geist-sans), sans-serif;
+  --text-display-xl--line-height: 1.25;
+  --text-display-xl--letter-spacing: 0;
+  --text-display-lg--line-height: 1.28;
+  --text-display-lg--letter-spacing: 0;
+  --text-display-md--line-height: 1.32;
+  --text-display-md--letter-spacing: 0;
+  --text-display-sm--line-height: 1.4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html[lang="bn"] body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  html[lang="bn"] .uppercase {
+    text-transform: none;
+  }
+  html[lang="bn"] [class*="tracking-"] {
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 35%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Paper grain: fixed, non-interactive, cheap. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 180px 180px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ------------------------------------------------------------------ */
+/* Component utilities                                                 */
+/* ------------------------------------------------------------------ */
+
+/* Eyebrow label above headings. Bangla variant drops caps and tracking. */
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--ink-muted);
+  box-shadow: 0 0 0 1px var(--hairline);
+  background: var(--surface);
+}
+html[lang="bn"] .eyebrow {
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 600;
+}
+
+/* Double bezel: outer shell (tray) and inner core (plate). */
+@utility shell {
+  background: var(--paper-2);
+  border-radius: var(--radius-shell);
+  padding: 0.375rem;
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+@utility core {
+  background: var(--surface);
+  border-radius: var(--radius-core);
+  box-shadow:
+    inset 0 1px 1px var(--inset-highlight),
+    0 0 0 1px var(--hairline);
+}
+@utility frame {
+  background: var(--paper-2);
+  border-radius: var(--radius-frame);
+  padding: 0.375rem;
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+@utility frame-inner {
+  border-radius: var(--radius-frame-inner);
+  overflow: hidden;
+}
+
+/* Hairline rule using the token instead of a grey border */
+@utility hairline {
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+
+/* Site container */
+@utility container-site {
+  width: 100%;
+  max-width: var(--container-site);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
 }

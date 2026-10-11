@@ -1,18 +1,93 @@
-rules_version='2'
+rules_version = '2';
 
+// Roles come from Firebase Auth custom claims: request.auth.token.role ∈ superAdmin | editor | contributor.
+// The Next.js app writes through the Admin SDK (which bypasses these rules), so these rules exist to
+// stop direct client access: the public may read published content only, and only role-holders may write.
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+    function role() {
+      return signedIn() && 'role' in request.auth.token ? request.auth.token.role : '';
+    }
+    function isSuper() {
+      return role() == 'superAdmin';
+    }
+    function isEditor() {
+      return isSuper() || role() == 'editor';
+    }
+    function isContributor() {
+      return isEditor() || role() == 'contributor';
+    }
+    function isPublished() {
+      return resource.data.status == 'published';
+    }
+    function keepsDraft() {
+      // Contributors may create and edit drafts only; publishing requires an editor.
+      return request.resource.data.status == 'draft';
+    }
+    function contentWrite() {
+      return isEditor()
+        || (isContributor() && keepsDraft() && (resource == null || resource.data.status == 'draft'));
+    }
+
+    // ---- Singletons: public read, role-based write --------------------------------------------
+    match /settings/{doc} {
+      allow read: if true;
+      allow write: if isSuper();
+    }
+    match /pages/{doc} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+    match /obe/{doc} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+
+    // ---- Content collections: published is public; drafts are visible to roles -----------------
+    match /programs/{id}        { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /courses/{id}         { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /faculty/{id}         { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /staff/{id}           { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /notices/{id}         { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /noticeCategories/{id}{ allow read: if true;                              allow write: if isEditor(); }
+    match /events/{id}          { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /downloads/{id}       { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /researchAreas/{id}   { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /labs/{id}            { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+    match /publications/{id}    { allow read: if isPublished() || isContributor(); allow create, update: if contentWrite(); allow delete: if isEditor(); }
+
+    // ---- Contact form inbox: anyone may create a well-formed message; editors read and manage --
+    match /messages/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'subject', 'body', 'read', 'createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() <= 120
+        && request.resource.data.email is string && request.resource.data.email.size() <= 254
+        && request.resource.data.subject is string && request.resource.data.subject.size() <= 200
+        && request.resource.data.body is string && request.resource.data.body.size() <= 5000
+        && request.resource.data.read == false;
+      allow read, update, delete: if isEditor();
+    }
+
+    // ---- Admin bookkeeping ---------------------------------------------------------------------
+    match /users/{uid} {
+      allow read: if isContributor();
+      allow write: if isSuper();
+    }
+    match /auditLogs/{id} {
+      allow read: if isEditor();
+      allow write: if false; // Admin SDK only
+    }
+    match /{path=**}/revisions/{rev} {
+      allow read: if isContributor();
+      allow write: if false; // Admin SDK only
+    }
+
+    // Everything else is closed.
     match /{document=**} {
-      // This rule allows anyone with your database reference to view, edit,
-      // and delete all data in your database. It is useful for getting
-      // started, but it is configured to expire after 30 days because it
-      // leaves your app open to attackers. At that time, all client
-      // requests to your database will be denied.
-      //
-      // Make sure to write security rules for your app before that time, or
-      // else all client requests to your database will be denied until you
-      // update your rules.
-      allow read, write: if request.time < timestamp.date(2026, 11, 3);
+      allow read, write: if false;
     }
   }
 }

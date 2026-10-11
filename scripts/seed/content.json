@@ -1,0 +1,505 @@
+{
+  "_readme": "Bilingual seed content for scripts/seed.ts. Every user-facing string is { en, bn }. Values marked PLACEHOLDER must be replaced by the department before launch. Phosphor icon names are stored as strings.",
+  "_placeholders": [
+    "site.emails", "site.phones", "site.officeHours", "site.mapEmbedUrl", "site.socials",
+    "home.stats[*].value", "home.hero[0].image", "chairmanMessage.*", "program.totalCredits", "program.intake", "program.eligibility"
+  ],
+
+  "site": {
+    "name": {
+      "en": "Department of Computer Science and Engineering",
+      "bn": "কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ"
+    },
+    "shortName": { "en": "CSE, EBAUB", "bn": "সিএসই, ইবিএইউবি" },
+    "tagline": {
+      "en": "Faculty of Engineering, Exim Bank Agricultural University Bangladesh",
+      "bn": "প্রকৌশল অনুষদ, এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশ"
+    },
+    "universityName": {
+      "en": "Exim Bank Agricultural University Bangladesh",
+      "bn": "এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশ"
+    },
+    "universityUrl": "https://ebaub.edu.bd",
+    "logo": { "src": "/images/brand/logo-512.webp", "alt": { "en": "EBAUB CSE department seal", "bn": "ইবিএইউবি সিএসই বিভাগের সিল" } },
+    "logoMono": { "src": "/images/brand/logo-mono-512.png", "alt": { "en": "EBAUB CSE department seal", "bn": "ইবিএইউবি সিএসই বিভাগের সিল" } },
+    "favicon": "/images/brand/icon-32.png",
+    "address": {
+      "en": "Exim Bank Agricultural University Bangladesh, Chapai Nawabganj, Bangladesh",
+      "bn": "এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশ, চাঁপাইনবাবগঞ্জ, বাংলাদেশ"
+    },
+    "emails": ["PLACEHOLDER cse@ebaub.edu.bd"],
+    "phones": ["PLACEHOLDER +880"],
+    "officeHours": {
+      "en": "Sunday to Thursday, 9:00 am to 5:00 pm",
+      "bn": "রবিবার থেকে বৃহস্পতিবার, সকাল ৯টা থেকে বিকেল ৫টা"
+    },
+    "mapEmbedUrl": "",
+    "socials": { "facebook": "", "linkedin": "", "youtube": "" },
+    "useBanglaDigits": true,
+    "nav": [
+      { "label": { "en": "Home", "bn": "হোম" }, "href": "/" },
+      {
+        "label": { "en": "About", "bn": "আমাদের সম্পর্কে" }, "href": "/about",
+        "children": [
+          { "label": { "en": "Overview", "bn": "পরিচিতি" }, "href": "/about" },
+          { "label": { "en": "Vision and Mission", "bn": "রূপকল্প ও অভিলক্ষ্য" }, "href": "/about#vision-mission" },
+          { "label": { "en": "Chairman's Message", "bn": "চেয়ারম্যানের বাণী" }, "href": "/about/chairman" }
+        ]
+      },
+      {
+        "label": { "en": "Academics", "bn": "একাডেমিক" }, "href": "/academics",
+        "children": [
+          { "label": { "en": "Programs", "bn": "প্রোগ্রাম" }, "href": "/academics" },
+          { "label": { "en": "Curriculum", "bn": "পাঠ্যক্রম" }, "href": "/academics/curriculum" },
+          { "label": { "en": "OBE Framework", "bn": "ওবিই কাঠামো" }, "href": "/academics/obe" }
+        ]
+      },
+      { "label": { "en": "Faculty", "bn": "শিক্ষকমণ্ডলী" }, "href": "/faculty" },
+      { "label": { "en": "Research", "bn": "গবেষণা" }, "href": "/research" },
+      { "label": { "en": "Notices", "bn": "নোটিশ" }, "href": "/notices" },
+      { "label": { "en": "News and Events", "bn": "সংবাদ ও অনুষ্ঠান" }, "href": "/events" },
+      { "label": { "en": "Contact", "bn": "যোগাযোগ" }, "href": "/contact" }
+    ],
+    "footer": {
+      "about": {
+        "en": "The Department of Computer Science and Engineering is part of the Faculty of Engineering at Exim Bank Agricultural University Bangladesh. It offers a four-year B.Sc. in CSE built on outcome-based education.",
+        "bn": "কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশের প্রকৌশল অনুষদের অন্তর্ভুক্ত। বিভাগটি আউটকাম-ভিত্তিক শিক্ষা পদ্ধতিতে চার বছর মেয়াদি বি.এসসি. ইন সিএসই প্রোগ্রাম পরিচালনা করে।"
+      },
+      "columns": [
+        {
+          "heading": { "en": "Academics", "bn": "একাডেমিক" },
+          "links": [
+            { "label": { "en": "B.Sc. in CSE", "bn": "বি.এসসি. ইন সিএসই" }, "href": "/academics" },
+            { "label": { "en": "Curriculum", "bn": "পাঠ্যক্রম" }, "href": "/academics/curriculum" },
+            { "label": { "en": "OBE Framework", "bn": "ওবিই কাঠামো" }, "href": "/academics/obe" },
+            { "label": { "en": "Downloads", "bn": "ডাউনলোড" }, "href": "/downloads" }
+          ]
+        },
+        {
+          "heading": { "en": "Department", "bn": "বিভাগ" },
+          "links": [
+            { "label": { "en": "About", "bn": "আমাদের সম্পর্কে" }, "href": "/about" },
+            { "label": { "en": "Faculty and Staff", "bn": "শিক্ষক ও কর্মকর্তা" }, "href": "/faculty" },
+            { "label": { "en": "Research and Labs", "bn": "গবেষণা ও ল্যাব" }, "href": "/research" },
+            { "label": { "en": "Notices", "bn": "নোটিশ" }, "href": "/notices" }
+          ]
+        }
+      ]
+    },
+    "defaultSeo": {
+      "title": { "en": "Department of CSE, EBAUB", "bn": "সিএসই বিভাগ, ইবিএইউবি" },
+      "description": {
+        "en": "Department of Computer Science and Engineering, Faculty of Engineering, Exim Bank Agricultural University Bangladesh. B.Sc. in CSE, faculty, research, notices and events.",
+        "bn": "কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ, প্রকৌশল অনুষদ, এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশ। বি.এসসি. ইন সিএসই, শিক্ষকমণ্ডলী, গবেষণা, নোটিশ ও অনুষ্ঠান।"
+      },
+      "ogImage": { "src": "/images/brand/og-base.png", "alt": { "en": "EBAUB CSE department seal", "bn": "ইবিএইউবি সিএসই বিভাগের সিল" } }
+    }
+  },
+
+  "ui": {
+    "en": {
+      "skipToContent": "Skip to content",
+      "menu": "Menu",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "close": "Close",
+      "language": "Language",
+      "switchLocale": "বাংলা",
+      "theme": "Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeSystem": "System",
+      "universitySite": "EBAUB main site",
+      "readMore": "Read more",
+      "readFullMessage": "Read the full message",
+      "viewAll": "View all",
+      "allNotices": "All notices",
+      "allEvents": "All news and events",
+      "allFaculty": "All faculty",
+      "search": "Search",
+      "searchNotices": "Search notices",
+      "filter": "Filter",
+      "allCategories": "All categories",
+      "pinned": "Pinned",
+      "urgent": "Urgent",
+      "publishedOn": "Published on",
+      "attachments": "Attachments",
+      "download": "Download",
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "venue": "Venue",
+      "date": "Date",
+      "time": "Time",
+      "gallery": "Gallery",
+      "overview": "Overview",
+      "history": "History",
+      "universityVision": "Vision of the University",
+      "universityMission": "Mission of the University",
+      "deptVision": "Vision of the Department",
+      "deptMission": "Mission of the Department",
+      "objectives": "Objectives",
+      "chairman": "Chairman",
+      "effectiveFrom": "Effective from",
+      "programs": "Programs",
+      "curriculum": "Curriculum",
+      "courses": "Courses",
+      "duration": "Duration",
+      "years": "years",
+      "totalCredits": "Total credits",
+      "intake": "Intake",
+      "eligibility": "Eligibility",
+      "downloadCurriculum": "Download curriculum (PDF)",
+      "year": "Year",
+      "semester": "Semester",
+      "courseCode": "Code",
+      "courseTitle": "Course title",
+      "credit": "Credit",
+      "credits": "Credits",
+      "type": "Type",
+      "theory": "Theory",
+      "lab": "Lab",
+      "prerequisites": "Prerequisites",
+      "none": "None",
+      "rationale": "Rationale",
+      "courseContent": "Course content",
+      "clos": "Course learning outcomes",
+      "cloPoMapping": "CLO to PO mapping",
+      "references": "References",
+      "graduateAttributes": "Graduate attributes",
+      "peos": "Program educational objectives",
+      "pos": "Program outcomes",
+      "wks": "Knowledge profile",
+      "peoPmMap": "PEO to mission mapping",
+      "designation": "Designation",
+      "education": "Education",
+      "researchInterests": "Research interests",
+      "publications": "Publications",
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Office",
+      "room": "Room",
+      "staff": "Officers and staff",
+      "researchAreas": "Research areas",
+      "labs": "Laboratories",
+      "equipment": "Equipment",
+      "inCharge": "In charge",
+      "facultyMember": "Faculty member",
+      "address": "Address",
+      "officeHours": "Office hours",
+      "map": "Map",
+      "sendMessage": "Send a message",
+      "yourName": "Your name",
+      "yourEmail": "Your email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "messageSent": "Thank you. Your message has been sent.",
+      "messageFailed": "Something went wrong. Please try again.",
+      "quickLinks": "Quick links",
+      "contact": "Contact",
+      "followUs": "Follow us",
+      "copyright": "© {year} Department of CSE, EBAUB. All rights reserved.",
+      "loading": "Loading",
+      "noResults": "Nothing found.",
+      "noNotices": "No notices yet.",
+      "noEvents": "No events yet.",
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {page} of {total}",
+      "notFoundTitle": "Page not found",
+      "notFoundBody": "The page you are looking for does not exist or has moved.",
+      "backHome": "Back to home"
+    },
+    "bn": {
+      "skipToContent": "মূল বিষয়বস্তুতে যান",
+      "menu": "মেনু",
+      "openMenu": "মেনু খুলুন",
+      "closeMenu": "মেনু বন্ধ করুন",
+      "close": "বন্ধ",
+      "language": "ভাষা",
+      "switchLocale": "English",
+      "theme": "থিম",
+      "themeLight": "হালকা",
+      "themeDark": "গাঢ়",
+      "themeSystem": "সিস্টেম",
+      "universitySite": "ইবিএইউবি মূল ওয়েবসাইট",
+      "readMore": "আরও পড়ুন",
+      "readFullMessage": "পুরো বাণী পড়ুন",
+      "viewAll": "সব দেখুন",
+      "allNotices": "সব নোটিশ",
+      "allEvents": "সব সংবাদ ও অনুষ্ঠান",
+      "allFaculty": "সব শিক্ষক",
+      "search": "অনুসন্ধান",
+      "searchNotices": "নোটিশ খুঁজুন",
+      "filter": "ফিল্টার",
+      "allCategories": "সব ধরন",
+      "pinned": "পিন করা",
+      "urgent": "জরুরি",
+      "publishedOn": "প্রকাশের তারিখ",
+      "attachments": "সংযুক্তি",
+      "download": "ডাউনলোড",
+      "upcoming": "আসন্ন",
+      "past": "অতীত",
+      "venue": "স্থান",
+      "date": "তারিখ",
+      "time": "সময়",
+      "gallery": "গ্যালারি",
+      "overview": "পরিচিতি",
+      "history": "ইতিহাস",
+      "universityVision": "বিশ্ববিদ্যালয়ের রূপকল্প",
+      "universityMission": "বিশ্ববিদ্যালয়ের অভিলক্ষ্য",
+      "deptVision": "বিভাগের রূপকল্প",
+      "deptMission": "বিভাগের অভিলক্ষ্য",
+      "objectives": "উদ্দেশ্যসমূহ",
+      "chairman": "চেয়ারম্যান",
+      "effectiveFrom": "কার্যকর",
+      "programs": "প্রোগ্রামসমূহ",
+      "curriculum": "পাঠ্যক্রম",
+      "courses": "কোর্সসমূহ",
+      "duration": "মেয়াদ",
+      "years": "বছর",
+      "totalCredits": "মোট ক্রেডিট",
+      "intake": "ভর্তি আসন",
+      "eligibility": "ভর্তির যোগ্যতা",
+      "downloadCurriculum": "পাঠ্যক্রম ডাউনলোড (পিডিএফ)",
+      "year": "বর্ষ",
+      "semester": "সেমিস্টার",
+      "courseCode": "কোড",
+      "courseTitle": "কোর্সের নাম",
+      "credit": "ক্রেডিট",
+      "credits": "ক্রেডিট",
+      "type": "ধরন",
+      "theory": "তত্ত্বীয়",
+      "lab": "ল্যাব",
+      "prerequisites": "পূর্বশর্ত",
+      "none": "নেই",
+      "rationale": "যৌক্তিকতা",
+      "courseContent": "কোর্সের বিষয়বস্তু",
+      "clos": "কোর্সের শিখনফল",
+      "cloPoMapping": "সিএলও ও পিও ম্যাপিং",
+      "references": "তথ্যসূত্র",
+      "graduateAttributes": "স্নাতকের বৈশিষ্ট্য",
+      "peos": "প্রোগ্রাম শিক্ষা উদ্দেশ্য",
+      "pos": "প্রোগ্রাম আউটকাম",
+      "wks": "জ্ঞান প্রোফাইল",
+      "peoPmMap": "পিইও ও অভিলক্ষ্যের ম্যাপিং",
+      "designation": "পদবি",
+      "education": "শিক্ষাগত যোগ্যতা",
+      "researchInterests": "গবেষণার ক্ষেত্র",
+      "publications": "প্রকাশনা",
+      "email": "ইমেইল",
+      "phone": "ফোন",
+      "office": "অফিস",
+      "room": "কক্ষ",
+      "staff": "কর্মকর্তা ও কর্মচারী",
+      "researchAreas": "গবেষণার ক্ষেত্রসমূহ",
+      "labs": "ল্যাবরেটরি",
+      "equipment": "যন্ত্রপাতি",
+      "inCharge": "দায়িত্বপ্রাপ্ত",
+      "facultyMember": "শিক্ষক",
+      "address": "ঠিকানা",
+      "officeHours": "অফিস সময়",
+      "map": "মানচিত্র",
+      "sendMessage": "বার্তা পাঠান",
+      "yourName": "আপনার নাম",
+      "yourEmail": "আপনার ইমেইল",
+      "subject": "বিষয়",
+      "message": "বার্তা",
+      "send": "পাঠান",
+      "messageSent": "ধন্যবাদ। আপনার বার্তা পাঠানো হয়েছে।",
+      "messageFailed": "কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।",
+      "quickLinks": "দ্রুত লিংক",
+      "contact": "যোগাযোগ",
+      "followUs": "আমাদের অনুসরণ করুন",
+      "copyright": "© {year} সিএসই বিভাগ, ইবিএইউবি। সর্বস্বত্ব সংরক্ষিত।",
+      "loading": "লোড হচ্ছে",
+      "noResults": "কিছু পাওয়া যায়নি।",
+      "noNotices": "এখনো কোনো নোটিশ নেই।",
+      "noEvents": "এখনো কোনো সংবাদ বা অনুষ্ঠান নেই।",
+      "previous": "আগের",
+      "next": "পরের",
+      "pageOf": "পৃষ্ঠা {page} / {total}",
+      "notFoundTitle": "পৃষ্ঠাটি পাওয়া যায়নি",
+      "notFoundBody": "আপনি যে পৃষ্ঠাটি খুঁজছেন তা নেই, অথবা সরিয়ে নেওয়া হয়েছে।",
+      "backHome": "হোমে ফিরে যান"
+    }
+  },
+
+  "home": {
+    "heroVariant": "editorial",
+    "hero": [
+      {
+        "image": { "src": "/images/hero/PLACEHOLDER.webp", "alt": { "en": "Students working in the CSE laboratory", "bn": "সিএসই ল্যাবরেটরিতে কাজ করছে শিক্ষার্থীরা" } },
+        "eyebrow": { "en": "B.Sc. in Computer Science and Engineering", "bn": "বি.এসসি. ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং" },
+        "headline": { "en": "Learn to build the systems the world runs on.", "bn": "যে প্রযুক্তিতে পৃথিবী চলে, তা গড়তে শিখুন।" },
+        "subtext": {
+          "en": "A four-year engineering degree at the Faculty of Engineering, Exim Bank Agricultural University Bangladesh. The curriculum follows outcome-based education and is aligned with the Washington Accord.",
+          "bn": "এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশের প্রকৌশল অনুষদে চার বছর মেয়াদি প্রকৌশল ডিগ্রি। পাঠ্যক্রমটি আউটকাম-ভিত্তিক শিক্ষা পদ্ধতিতে সাজানো এবং ওয়াশিংটন অ্যাকর্ডের সঙ্গে সঙ্গতিপূর্ণ।"
+        },
+        "ctaLabel": { "en": "Explore B.Sc. in CSE", "bn": "বি.এসসি. ইন সিএসই সম্পর্কে জানুন" },
+        "ctaHref": "/academics",
+        "secondaryCtaLabel": { "en": "Meet the faculty", "bn": "শিক্ষকদের সঙ্গে পরিচিত হোন" },
+        "secondaryCtaHref": "/faculty"
+      }
+    ],
+    "stats": [
+      { "label": { "en": "Students", "bn": "শিক্ষার্থী" }, "value": 0, "suffix": "+" },
+      { "label": { "en": "Faculty members", "bn": "শিক্ষক" }, "value": 0, "suffix": "" },
+      { "label": { "en": "Laboratories", "bn": "ল্যাবরেটরি" }, "value": 0, "suffix": "" },
+      { "label": { "en": "Publications", "bn": "প্রকাশনা" }, "value": 0, "suffix": "+" }
+    ],
+    "sections": [
+      { "key": "stats", "visible": true, "heading": { "en": "The department at a glance", "bn": "এক নজরে বিভাগ" }, "subheading": { "en": "", "bn": "" } },
+      { "key": "chairman", "visible": true, "heading": { "en": "Message from the Chairman", "bn": "চেয়ারম্যানের বাণী" }, "subheading": { "en": "", "bn": "" } },
+      { "key": "missionVision", "visible": true, "heading": { "en": "Vision and mission", "bn": "রূপকল্প ও অভিলক্ষ্য" }, "subheading": { "en": "What the department sets out to do, and how.", "bn": "বিভাগ কী করতে চায়, এবং কীভাবে।" } },
+      { "key": "notices", "visible": true, "heading": { "en": "Latest notices", "bn": "সাম্প্রতিক নোটিশ" }, "subheading": { "en": "", "bn": "" } },
+      { "key": "events", "visible": true, "heading": { "en": "News and events", "bn": "সংবাদ ও অনুষ্ঠান" }, "subheading": { "en": "", "bn": "" } },
+      { "key": "faculty", "visible": true, "heading": { "en": "Our faculty", "bn": "আমাদের শিক্ষকমণ্ডলী" }, "subheading": { "en": "", "bn": "" } }
+    ],
+    "seo": {
+      "title": { "en": "Department of CSE, EBAUB", "bn": "সিএসই বিভাগ, ইবিএইউবি" },
+      "description": {
+        "en": "B.Sc. in Computer Science and Engineering at Exim Bank Agricultural University Bangladesh.",
+        "bn": "এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশে বি.এসসি. ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং।"
+      }
+    }
+  },
+
+  "about": {
+    "overview": {
+      "en": "<p>The Department of Computer Science and Engineering belongs to the Faculty of Engineering at Exim Bank Agricultural University Bangladesh. It offers a four-year Bachelor of Science in Computer Science and Engineering (B.Sc. in CSE).</p><p>The program follows outcome-based education. Course learning outcomes map to program outcomes and to the graduate attributes of the Washington Accord, in line with the Bangladesh National Qualifications Framework at level 7. The current curriculum takes effect from Summer 2026.</p><p>Teaching combines lectures with laboratory work, design projects and a capstone. Subject areas include programming, data structures and algorithms, computer architecture, operating systems, databases, networks, software engineering, artificial intelligence, machine learning, computer graphics, mobile computing and information security.</p>",
+      "bn": "<p>কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশের প্রকৌশল অনুষদের অন্তর্ভুক্ত। বিভাগটি চার বছর মেয়াদি ব্যাচেলর অব সায়েন্স ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (বি.এসসি. ইন সিএসই) প্রোগ্রাম পরিচালনা করে।</p><p>প্রোগ্রামটি আউটকাম-ভিত্তিক শিক্ষা পদ্ধতি অনুসরণ করে। কোর্সের শিখনফল প্রোগ্রাম আউটকাম এবং ওয়াশিংটন অ্যাকর্ডের গ্র্যাজুয়েট অ্যাট্রিবিউটের সঙ্গে সম্পর্কিত, বাংলাদেশ জাতীয় যোগ্যতা কাঠামোর লেভেল ৭ অনুযায়ী। বর্তমান পাঠ্যক্রম সামার ২০২৬ থেকে কার্যকর।</p><p>পাঠদানে বক্তৃতার পাশাপাশি রয়েছে ল্যাবরেটরি কাজ, নকশা প্রকল্প ও ক্যাপস্টোন। বিষয়ের মধ্যে রয়েছে প্রোগ্রামিং, ডেটা স্ট্রাকচার ও অ্যালগরিদম, কম্পিউটার আর্কিটেকচার, অপারেটিং সিস্টেম, ডেটাবেজ, নেটওয়ার্ক, সফটওয়্যার ইঞ্জিনিয়ারিং, কৃত্রিম বুদ্ধিমত্তা, মেশিন লার্নিং, কম্পিউটার গ্রাফিক্স, মোবাইল কম্পিউটিং ও তথ্য নিরাপত্তা।</p>"
+    },
+    "history": [],
+    "seo": {
+      "title": { "en": "About the Department", "bn": "বিভাগ সম্পর্কে" },
+      "description": { "en": "Overview, history, vision and mission of the CSE department at EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের পরিচিতি, ইতিহাস, রূপকল্প ও অভিলক্ষ্য।" }
+    }
+  },
+
+  "missionVision": {
+    "universityVision": {
+      "en": "To be a globally recognized institution of higher learning that transforms lives through innovative education, groundbreaking research, and ethical leadership, creating positive impact for society and shaping the future of knowledge and technology.",
+      "bn": "উদ্ভাবনী শিক্ষা, যুগান্তকারী গবেষণা ও নৈতিক নেতৃত্বের মাধ্যমে মানুষের জীবন বদলে দেওয়া, সমাজে ইতিবাচক প্রভাব ফেলা এবং জ্ঞান ও প্রযুক্তির ভবিষ্যৎ গড়ে তোলা একটি বিশ্বস্বীকৃত উচ্চশিক্ষা প্রতিষ্ঠান হয়ে ওঠা।"
+    },
+    "universityMission": [
+      { "code": "UM1", "text": { "en": "To deliver world-class education and cutting-edge research that prepares graduates for lifelong learning, global excellence, and innovation.", "bn": "বিশ্বমানের শিক্ষা ও অগ্রসর গবেষণার মাধ্যমে স্নাতকদের আজীবন শিক্ষা, বৈশ্বিক উৎকর্ষ ও উদ্ভাবনের জন্য প্রস্তুত করা।" } },
+      { "code": "UM2", "text": { "en": "To develop ethical leaders with critical thinking, collaboration skills, and a strong commitment to social responsibility and community impact.", "bn": "সমালোচনামূলক চিন্তা, সহযোগিতার দক্ষতা এবং সামাজিক দায়বদ্ধতা ও সমাজের প্রতি দৃঢ় অঙ্গীকারসম্পন্ন নৈতিক নেতৃত্ব গড়ে তোলা।" } },
+      { "code": "UM3", "text": { "en": "To advance knowledge through transformative and interdisciplinary research, and foster entrepreneurship that addresses societal challenges and drives economic development.", "bn": "রূপান্তরমুখী ও আন্তঃবিষয়ক গবেষণার মাধ্যমে জ্ঞানের অগ্রগতি সাধন এবং সামাজিক সমস্যার সমাধান ও অর্থনৈতিক উন্নয়নে ভূমিকা রাখে এমন উদ্যোক্তা মানসিকতা গড়ে তোলা।" } }
+    ],
+    "deptVision": {
+      "en": "To be a globally recognized center of excellence in Computer Science and Engineering education, research, and innovation, fostering the next generation of technology pioneers who will shape the digital future and solve humanity's greatest challenges through computational thinking and engineering excellence.",
+      "bn": "কম্পিউটার বিজ্ঞান ও প্রকৌশলের শিক্ষা, গবেষণা ও উদ্ভাবনে একটি বিশ্বস্বীকৃত উৎকর্ষ কেন্দ্র হয়ে ওঠা, যেখানে গড়ে উঠবে আগামী প্রজন্মের প্রযুক্তি-অগ্রদূতেরা, যারা কম্পিউটেশনাল চিন্তা ও প্রকৌশল উৎকর্ষের মাধ্যমে ডিজিটাল ভবিষ্যৎ গড়বে এবং মানবজাতির বড় চ্যালেঞ্জগুলোর সমাধান করবে।"
+    },
+    "deptMission": [
+      { "code": "PM1", "icon": "Books", "title": { "en": "Strong foundations", "bn": "দৃঢ় ভিত্তি" }, "text": { "en": "Prepare graduates with strong foundations in computing and problem-solving for complex engineering challenges and lifelong learning.", "bn": "কম্পিউটিং ও সমস্যা সমাধানে দৃঢ় ভিত্তিসম্পন্ন স্নাতক তৈরি করা, যারা জটিল প্রকৌশল চ্যালেঞ্জ মোকাবিলা করতে এবং আজীবন শিখতে প্রস্তুত।" } },
+      { "code": "PM2", "icon": "Flask", "title": { "en": "Research and innovation", "bn": "গবেষণা ও উদ্ভাবন" }, "text": { "en": "Promote research, innovation, and interdisciplinary collaboration to design sustainable solutions with modern tools and technologies.", "bn": "আধুনিক টুল ও প্রযুক্তি ব্যবহার করে টেকসই সমাধান নকশার লক্ষ্যে গবেষণা, উদ্ভাবন ও আন্তঃবিষয়ক সহযোগিতাকে উৎসাহিত করা।" } },
+      { "code": "PM3", "icon": "Scales", "title": { "en": "Ethics and sustainability", "bn": "নৈতিকতা ও টেকসই চর্চা" }, "text": { "en": "Uphold ethics, social responsibility, and sustainability in professional practice.", "bn": "পেশাগত চর্চায় নৈতিকতা, সামাজিক দায়বদ্ধতা ও টেকসই নীতি সমুন্নত রাখা।" } },
+      { "code": "PM4", "icon": "UsersThree", "title": { "en": "Leadership and communication", "bn": "নেতৃত্ব ও যোগাযোগ" }, "text": { "en": "Develop leadership, teamwork, project management, and communication skills for global careers.", "bn": "বৈশ্বিক পেশাজীবনের জন্য নেতৃত্ব, দলগত কাজ, প্রকল্প ব্যবস্থাপনা ও যোগাযোগ দক্ষতা গড়ে তোলা।" } }
+    ],
+    "objectives": [
+      { "title": { "en": "Academic excellence", "bn": "একাডেমিক উৎকর্ষ" }, "text": { "en": "Deliver a comprehensive CSE curriculum that equips students with strong theoretical foundations, practical skills, and the ability to solve complex engineering problems.", "bn": "শিক্ষার্থীদের দৃঢ় তাত্ত্বিক ভিত্তি, ব্যবহারিক দক্ষতা এবং জটিল প্রকৌশল সমস্যা সমাধানের সামর্থ্য দেয় এমন একটি পূর্ণাঙ্গ সিএসই পাঠ্যক্রম প্রদান করা।" } },
+      { "title": { "en": "Research and innovation", "bn": "গবেষণা ও উদ্ভাবন" }, "text": { "en": "Create an environment that encourages inquiry, interdisciplinary collaboration, and innovative solutions to technological and societal challenges.", "bn": "অনুসন্ধান, আন্তঃবিষয়ক সহযোগিতা এবং প্রযুক্তিগত ও সামাজিক সমস্যার উদ্ভাবনী সমাধানকে উৎসাহিত করে এমন পরিবেশ গড়ে তোলা।" } },
+      { "title": { "en": "Ethics and social responsibility", "bn": "নৈতিকতা ও সামাজিক দায়বদ্ধতা" }, "text": { "en": "Promote professional integrity, ethical practices, and sustainable approaches in the application of computer science and engineering.", "bn": "কম্পিউটার বিজ্ঞান ও প্রকৌশলের প্রয়োগে পেশাগত সততা, নৈতিক চর্চা ও টেকসই পদ্ধতিকে উৎসাহিত করা।" } },
+      { "title": { "en": "Lifelong learning", "bn": "আজীবন শিক্ষা" }, "text": { "en": "Inspire graduates to continually upgrade their knowledge and skills in emerging technologies for personal and professional growth.", "bn": "ব্যক্তিগত ও পেশাগত বিকাশের জন্য উদীয়মান প্রযুক্তিতে জ্ঞান ও দক্ষতা নিয়মিত হালনাগাদ রাখতে স্নাতকদের অনুপ্রাণিত করা।" } },
+      { "title": { "en": "Leadership and global competence", "bn": "নেতৃত্ব ও বৈশ্বিক সক্ষমতা" }, "text": { "en": "Prepare students with leadership, teamwork, communication, and project management abilities to succeed in diverse, global professional contexts.", "bn": "বৈচিত্র্যময় ও বৈশ্বিক পেশাগত পরিবেশে সফল হওয়ার জন্য শিক্ষার্থীদের নেতৃত্ব, দলগত কাজ, যোগাযোগ ও প্রকল্প ব্যবস্থাপনার সামর্থ্যে প্রস্তুত করা।" } }
+    ],
+    "seo": {
+      "title": { "en": "Vision and Mission", "bn": "রূপকল্প ও অভিলক্ষ্য" },
+      "description": { "en": "Vision, mission and objectives of the university and the CSE department.", "bn": "বিশ্ববিদ্যালয় ও সিএসই বিভাগের রূপকল্প, অভিলক্ষ্য ও উদ্দেশ্য।" }
+    }
+  },
+
+  "chairmanMessage": {
+    "name": { "en": "PLACEHOLDER", "bn": "PLACEHOLDER" },
+    "designation": { "en": "Chairman, Department of CSE", "bn": "চেয়ারম্যান, সিএসই বিভাগ" },
+    "photo": { "src": "/images/chairman/PLACEHOLDER.webp", "alt": { "en": "Chairman of the Department of CSE", "bn": "সিএসই বিভাগের চেয়ারম্যান" } },
+    "signature": { "src": "/images/chairman/PLACEHOLDER-signature.png", "alt": { "en": "Signature", "bn": "স্বাক্ষর" } },
+    "excerpt": { "en": "PLACEHOLDER", "bn": "PLACEHOLDER" },
+    "message": { "en": "<p>PLACEHOLDER</p>", "bn": "<p>PLACEHOLDER</p>" },
+    "effectiveFrom": "2026-01-01",
+    "seo": {
+      "title": { "en": "Chairman's Message", "bn": "চেয়ারম্যানের বাণী" },
+      "description": { "en": "Message from the Chairman of the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের চেয়ারম্যানের বাণী।" }
+    }
+  },
+
+  "program": {
+    "name": { "en": "Bachelor of Science in Computer Science and Engineering", "bn": "ব্যাচেলর অব সায়েন্স ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং" },
+    "slug": "bsc-in-cse",
+    "degree": { "en": "B.Sc. in CSE", "bn": "বি.এসসি. ইন সিএসই" },
+    "durationYears": 4,
+    "totalCredits": null,
+    "intake": { "en": "PLACEHOLDER", "bn": "PLACEHOLDER" },
+    "eligibility": { "en": "<p>PLACEHOLDER</p>", "bn": "<p>PLACEHOLDER</p>" },
+    "description": {
+      "en": "<p>The Bachelor of Science in Computer Science and Engineering (B.Sc. in CSE) at Exim Bank Agricultural University Bangladesh is a four-year undergraduate program designed to prepare graduates with strong foundations in computing, engineering principles, and problem-solving skills. The program integrates theoretical knowledge with extensive laboratory work, design projects, and industry exposure so that students can address complex engineering problems in real-world contexts.</p><p>The curriculum is structured under the Outcome-Based Education (OBE) framework, with constructive alignment between course learning outcomes, program outcomes, and the graduate attributes of the Washington Accord. It emphasizes technical competence as well as research, innovation, ethical practice, sustainability, teamwork, communication, and lifelong learning, in line with the Bangladesh National Qualifications Framework (BNQF Level 7).</p><p>Graduates of this program will be able to design and develop software systems, manage large-scale data, apply artificial intelligence and emerging technologies, and contribute to digital transformation both nationally and globally. The program also fosters entrepreneurial mindsets and leadership qualities, so graduates can excel in industry, research, or higher studies while contributing to society.</p>",
+      "bn": "<p>এক্সিম ব্যাংক কৃষি বিশ্ববিদ্যালয় বাংলাদেশের ব্যাচেলর অব সায়েন্স ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (বি.এসসি. ইন সিএসই) একটি চার বছর মেয়াদি স্নাতক প্রোগ্রাম, যার লক্ষ্য কম্পিউটিং, প্রকৌশল নীতি ও সমস্যা সমাধানে দৃঢ় ভিত্তিসম্পন্ন স্নাতক তৈরি করা। তাত্ত্বিক জ্ঞানের সঙ্গে ব্যাপক ল্যাবরেটরি কাজ, নকশা প্রকল্প ও শিল্পক্ষেত্রের অভিজ্ঞতা যুক্ত করে প্রোগ্রামটি শিক্ষার্থীদের বাস্তব প্রেক্ষাপটে জটিল প্রকৌশল সমস্যা মোকাবিলায় সক্ষম করে তোলে।</p><p>পাঠ্যক্রমটি আউটকাম-ভিত্তিক শিক্ষা (ওবিই) কাঠামোয় সাজানো, যাতে কোর্সের শিখনফল, প্রোগ্রাম আউটকাম এবং ওয়াশিংটন অ্যাকর্ডের গ্র্যাজুয়েট অ্যাট্রিবিউটের মধ্যে গঠনমূলক সামঞ্জস্য বজায় থাকে। প্রযুক্তিগত দক্ষতার পাশাপাশি এতে গবেষণা, উদ্ভাবন, নৈতিক চর্চা, টেকসইতা, দলগত কাজ, যোগাযোগ ও আজীবন শিক্ষার ওপর গুরুত্ব দেওয়া হয়েছে, বাংলাদেশ জাতীয় যোগ্যতা কাঠামোর (বিএনকিউএফ লেভেল ৭) সঙ্গে সঙ্গতি রেখে।</p><p>এই প্রোগ্রামের স্নাতকেরা সফটওয়্যার সিস্টেম নকশা ও তৈরি করতে, বড় পরিসরের উপাত্ত ব্যবস্থাপনা করতে, কৃত্রিম বুদ্ধিমত্তা ও উদীয়মান প্রযুক্তি প্রয়োগ করতে এবং জাতীয় ও বৈশ্বিক পর্যায়ে ডিজিটাল রূপান্তরে অবদান রাখতে সক্ষম হবে। প্রোগ্রামটি উদ্যোক্তা মানসিকতা ও নেতৃত্বের গুণাবলিও গড়ে তোলে, যাতে স্নাতকেরা শিল্প, গবেষণা বা উচ্চশিক্ষায় উৎকর্ষ অর্জনের পাশাপাশি সমাজে অর্থবহ অবদান রাখতে পারে।</p>"
+    },
+    "curriculumPdf": { "name": { "en": "B.Sc. in CSE Curriculum (Summer 2026)", "bn": "বি.এসসি. ইন সিএসই পাঠ্যক্রম (সামার ২০২৬)" }, "href": "/files/curriculum/bsc-cse-curriculum-v2.pdf", "kind": "static" }
+  },
+
+  "obe": {
+    "graduateAttributes": [
+      { "code": "GA1", "text": { "en": "Ability to apply computing and engineering principles to dissect complex technical challenges.", "bn": "জটিল প্রযুক্তিগত সমস্যা বিশ্লেষণে কম্পিউটিং ও প্রকৌশল নীতি প্রয়োগের সামর্থ্য।" } },
+      { "code": "GA2", "text": { "en": "Skill to craft sustainable technological solutions with adept use of modern tools.", "bn": "আধুনিক টুলের দক্ষ ব্যবহারে টেকসই প্রযুক্তিগত সমাধান তৈরির দক্ষতা।" } },
+      { "code": "GA3", "text": { "en": "Proficiency in investigative work with digital tools, coupled with societal impact awareness.", "bn": "ডিজিটাল টুল ব্যবহার করে অনুসন্ধানমূলক কাজে পারদর্শিতা, সঙ্গে সামাজিক প্রভাব সম্পর্কে সচেতনতা।" } },
+      { "code": "GA4", "text": { "en": "Commitment to ethical standards and excellence in diverse team dynamics.", "bn": "নৈতিক মানদণ্ডের প্রতি অঙ্গীকার এবং বৈচিত্র্যময় দলে কাজের উৎকর্ষ।" } },
+      { "code": "GA5", "text": { "en": "Capacity to articulate technical ideas with proficiency in project and resource oversight.", "bn": "প্রযুক্তিগত ধারণা স্পষ্টভাবে উপস্থাপনের সামর্থ্য এবং প্রকল্প ও সম্পদ তদারকিতে দক্ষতা।" } },
+      { "code": "GA6", "text": { "en": "Readiness for lifelong learning and potential for entrepreneurial, creative advancement.", "bn": "আজীবন শিক্ষার প্রস্তুতি এবং উদ্যোক্তা ও সৃজনশীল অগ্রগতির সম্ভাবনা।" } }
+    ],
+    "peos": [
+      { "code": "PEO1", "title": { "en": "Professional competence", "bn": "পেশাগত দক্ষতা" }, "text": { "en": "Graduates will possess a strong understanding of computer science principles, analysis techniques, and design methodologies, enabling them to effectively solve complex ICT problems.", "bn": "স্নাতকেরা কম্পিউটার বিজ্ঞানের নীতি, বিশ্লেষণ কৌশল ও নকশা পদ্ধতি সম্পর্কে দৃঢ় ধারণা অর্জন করবে, যা তাদের জটিল আইসিটি সমস্যা কার্যকরভাবে সমাধানে সক্ষম করবে।" } },
+      { "code": "PEO2", "title": { "en": "Prepared for future growth", "bn": "ভবিষ্যৎ অগ্রগতির প্রস্তুতি" }, "text": { "en": "Graduates will be prepared for successful employment, advanced studies, or continued professional development in their chosen fields.", "bn": "স্নাতকেরা নিজ নিজ ক্ষেত্রে সফল কর্মসংস্থান, উচ্চতর শিক্ষা বা অব্যাহত পেশাগত উন্নয়নের জন্য প্রস্তুত থাকবে।" } },
+      { "code": "PEO3", "title": { "en": "Leadership and managerial proficiency", "bn": "নেতৃত্ব ও ব্যবস্থাপনা দক্ষতা" }, "text": { "en": "Graduates will demonstrate effective communication, teamwork, time management, and leadership skills, enabling them to adapt and excel in professional roles.", "bn": "স্নাতকেরা কার্যকর যোগাযোগ, দলগত কাজ, সময় ব্যবস্থাপনা ও নেতৃত্বের দক্ষতা প্রদর্শন করবে, যা তাদের পেশাগত ভূমিকায় খাপ খাইয়ে নিতে ও উৎকর্ষ অর্জনে সহায়তা করবে।" } },
+      { "code": "PEO4", "title": { "en": "Awareness of societal and technological impact", "bn": "সামাজিক ও প্রযুক্তিগত প্রভাব সম্পর্কে সচেতনতা" }, "text": { "en": "Graduates will understand the broader societal, ethical, economic, cultural, legal, and environmental implications of technology, and engage stakeholders responsibly beyond their immediate teams.", "bn": "স্নাতকেরা প্রযুক্তির বৃহত্তর সামাজিক, নৈতিক, অর্থনৈতিক, সাংস্কৃতিক, আইনগত ও পরিবেশগত প্রভাব বুঝবে এবং নিজ দলের গণ্ডি ছাড়িয়ে অংশীজনদের সঙ্গে দায়িত্বশীলভাবে কাজ করবে।" } },
+      { "code": "PEO5", "title": { "en": "Responsible and ethical professionals", "bn": "দায়িত্বশীল ও নৈতিক পেশাজীবী" }, "text": { "en": "Graduates will act as informed and responsible professionals, mindful of issues such as privacy, security, copyright, and the potential societal impact of emerging technologies, including Artificial Intelligence.", "bn": "স্নাতকেরা সচেতন ও দায়িত্বশীল পেশাজীবী হিসেবে কাজ করবে এবং গোপনীয়তা, নিরাপত্তা, কপিরাইট ও কৃত্রিম বুদ্ধিমত্তাসহ উদীয়মান প্রযুক্তির সম্ভাব্য সামাজিক প্রভাবের মতো বিষয়ে সজাগ থাকবে।" } }
+    ],
+    "pos": [
+      { "code": "PO1", "title": { "en": "Engineering knowledge", "bn": "প্রকৌশল জ্ঞান" }, "text": { "en": "Apply knowledge of mathematics, natural science, engineering fundamentals, and an engineering specialisation as specified in WK1 to WK4 respectively to the solution of complex engineering problems.", "bn": "জটিল প্রকৌশল সমস্যার সমাধানে গণিত, প্রাকৃতিক বিজ্ঞান, প্রকৌশলের মৌলিক বিষয় এবং প্রকৌশলের বিশেষায়িত জ্ঞান (যথাক্রমে WK1 থেকে WK4) প্রয়োগ করা।" } },
+      { "code": "PO2", "title": { "en": "Problem analysis", "bn": "সমস্যা বিশ্লেষণ" }, "text": { "en": "Identify, formulate, research literature and analyse complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences and engineering sciences (WK1 to WK4).", "bn": "গণিত, প্রাকৃতিক বিজ্ঞান ও প্রকৌশল বিজ্ঞানের মূলনীতি (WK1 থেকে WK4) ব্যবহার করে জটিল প্রকৌশল সমস্যা শনাক্ত ও সূত্রবদ্ধ করা, সাহিত্য পর্যালোচনা করা এবং বিশ্লেষণের মাধ্যমে যুক্তিসিদ্ধ সিদ্ধান্তে পৌঁছানো।" } },
+      { "code": "PO3", "title": { "en": "Design and development of solutions", "bn": "সমাধানের নকশা ও উন্নয়ন" }, "text": { "en": "Design solutions for complex engineering problems and design systems, components or processes that meet specified needs with appropriate consideration for public health, and safety, cultural, societal and environmental considerations (WK5).", "bn": "জনস্বাস্থ্য, নিরাপত্তা, সাংস্কৃতিক, সামাজিক ও পরিবেশগত বিষয় যথাযথভাবে বিবেচনায় নিয়ে জটিল প্রকৌশল সমস্যার সমাধান এবং নির্দিষ্ট চাহিদা পূরণকারী সিস্টেম, উপাদান বা প্রক্রিয়ার নকশা করা (WK5)।" } },
+      { "code": "PO4", "title": { "en": "Investigation", "bn": "অনুসন্ধান" }, "text": { "en": "Conduct investigations of complex problems using research-based knowledge (WK8) and research methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions.", "bn": "গবেষণাভিত্তিক জ্ঞান (WK8) ও গবেষণা পদ্ধতি, যেমন পরীক্ষার নকশা, উপাত্ত বিশ্লেষণ ও ব্যাখ্যা এবং তথ্যের সমন্বয়, ব্যবহার করে জটিল সমস্যার অনুসন্ধান পরিচালনা এবং বৈধ সিদ্ধান্তে পৌঁছানো।" } },
+      { "code": "PO5", "title": { "en": "Tool usage", "bn": "টুল ব্যবহার" }, "text": { "en": "Create, select and apply appropriate techniques, resources and modern engineering and IT tools, including prediction and modelling, to complex engineering problems, with an understanding of the limitations (WK6).", "bn": "সীমাবদ্ধতা সম্পর্কে সচেতন থেকে জটিল প্রকৌশল সমস্যায় পূর্বাভাস ও মডেলিংসহ উপযুক্ত কৌশল, সম্পদ এবং আধুনিক প্রকৌশল ও আইটি টুল তৈরি, নির্বাচন ও প্রয়োগ করা (WK6)।" } },
+      { "code": "PO6", "title": { "en": "The engineer and the world", "bn": "প্রকৌশলী ও বিশ্ব" }, "text": { "en": "Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to professional engineering practice and solutions to complex engineering problems (WK7).", "bn": "প্রাসঙ্গিক জ্ঞানের ভিত্তিতে যুক্তি প্রয়োগ করে সামাজিক, স্বাস্থ্য, নিরাপত্তা, আইনগত ও সাংস্কৃতিক বিষয় এবং পেশাগত প্রকৌশল চর্চা ও জটিল প্রকৌশল সমস্যার সমাধানে এর ফলে উদ্ভূত দায়িত্ব মূল্যায়ন করা (WK7)।" } },
+      { "code": "PO7", "title": { "en": "Environment and sustainability", "bn": "পরিবেশ ও টেকসই উন্নয়ন" }, "text": { "en": "Understand and evaluate the sustainability and impact of professional engineering work in the solution of complex engineering problems in societal and environmental contexts (WK7).", "bn": "সামাজিক ও পরিবেশগত প্রেক্ষাপটে জটিল প্রকৌশল সমস্যা সমাধানে পেশাগত প্রকৌশল কাজের টেকসইতা ও প্রভাব বোঝা ও মূল্যায়ন করা (WK7)।" } },
+      { "code": "PO8", "title": { "en": "Ethics", "bn": "নৈতিকতা" }, "text": { "en": "Apply ethical principles and commit to professional ethics and responsibilities and norms of engineering practice (WK7).", "bn": "নৈতিক নীতি প্রয়োগ করা এবং পেশাগত নৈতিকতা, দায়িত্ব ও প্রকৌশল চর্চার রীতিনীতির প্রতি অঙ্গীকারবদ্ধ থাকা (WK7)।" } },
+      { "code": "PO9", "title": { "en": "Individual and collaborative team work", "bn": "একক ও দলগত কাজ" }, "text": { "en": "Function effectively as an individual, and as a member or leader in diverse teams and in multi-disciplinary settings.", "bn": "এককভাবে এবং বৈচিত্র্যময় দল ও বহুবিষয়ক পরিবেশে সদস্য বা নেতা হিসেবে কার্যকরভাবে কাজ করা।" } },
+      { "code": "PO10", "title": { "en": "Communication", "bn": "যোগাযোগ" }, "text": { "en": "Communicate effectively on complex engineering activities with the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations and give and receive clear instructions.", "bn": "প্রকৌশল সম্প্রদায় ও বৃহত্তর সমাজের সঙ্গে জটিল প্রকৌশল কার্যক্রম নিয়ে কার্যকরভাবে যোগাযোগ করা, যেমন কার্যকর প্রতিবেদন ও নকশা নথি বোঝা ও লেখা, কার্যকর উপস্থাপনা দেওয়া এবং স্পষ্ট নির্দেশনা দেওয়া ও গ্রহণ করা।" } },
+      { "code": "PO11", "title": { "en": "Project management and finance", "bn": "প্রকল্প ব্যবস্থাপনা ও অর্থায়ন" }, "text": { "en": "Demonstrate knowledge and understanding of engineering management principles and economic decision-making and apply these to one's own work as a member and leader in a team, to manage projects and in multi-disciplinary environments.", "bn": "প্রকৌশল ব্যবস্থাপনার নীতি ও অর্থনৈতিক সিদ্ধান্ত গ্রহণ সম্পর্কে জ্ঞান ও উপলব্ধি প্রদর্শন করা এবং দলের সদস্য ও নেতা হিসেবে নিজের কাজে, প্রকল্প ব্যবস্থাপনায় ও বহুবিষয়ক পরিবেশে তা প্রয়োগ করা।" } },
+      { "code": "PO12", "title": { "en": "Lifelong learning", "bn": "আজীবন শিক্ষা" }, "text": { "en": "Recognise the need for, and have the preparation and ability to engage in, independent and life-long learning in the broadest context of technological change.", "bn": "প্রযুক্তিগত পরিবর্তনের বৃহত্তর প্রেক্ষাপটে স্বাধীন ও আজীবন শিক্ষার প্রয়োজনীয়তা উপলব্ধি করা এবং তাতে যুক্ত হওয়ার প্রস্তুতি ও সামর্থ্য থাকা।" } }
+    ],
+    "wks": [
+      { "code": "WK1", "text": { "en": "A systematic, theory-based understanding of the natural sciences applicable to the discipline.", "bn": "এই শাখায় প্রযোজ্য প্রাকৃতিক বিজ্ঞানের একটি সুশৃঙ্খল, তত্ত্বভিত্তিক উপলব্ধি।" } },
+      { "code": "WK2", "text": { "en": "Conceptually-based mathematics, numerical analysis, statistics and formal aspects of computer and information science to support analysis and modelling applicable to the discipline.", "bn": "এই শাখায় প্রযোজ্য বিশ্লেষণ ও মডেলিংয়ে সহায়ক ধারণাভিত্তিক গণিত, সংখ্যাতাত্ত্বিক বিশ্লেষণ, পরিসংখ্যান এবং কম্পিউটার ও তথ্যবিজ্ঞানের আনুষ্ঠানিক দিক।" } },
+      { "code": "WK3", "text": { "en": "A systematic, theory-based formulation of engineering fundamentals required in the engineering discipline.", "bn": "প্রকৌশল শাখাটির জন্য প্রয়োজনীয় প্রকৌশলের মৌলিক বিষয়ের একটি সুশৃঙ্খল, তত্ত্বভিত্তিক সূত্রায়ন।" } },
+      { "code": "WK4", "text": { "en": "Engineering specialist knowledge that provides theoretical frameworks and bodies of knowledge for the accepted practice areas in the engineering discipline; much is at the forefront of the discipline.", "bn": "প্রকৌশল শাখাটির স্বীকৃত চর্চার ক্ষেত্রগুলোর জন্য তাত্ত্বিক কাঠামো ও জ্ঞানভাণ্ডার জোগায় এমন বিশেষায়িত প্রকৌশল জ্ঞান, যার অনেকটাই শাখাটির অগ্রভাগে অবস্থিত।" } },
+      { "code": "WK5", "text": { "en": "Knowledge, including efficient resource use, environmental impacts, whole-life cost, re-use of resources, net zero carbon, and similar concepts, that supports engineering design and operations in a practice area.", "bn": "কোনো চর্চার ক্ষেত্রে প্রকৌশল নকশা ও পরিচালনায় সহায়ক জ্ঞান, যার মধ্যে রয়েছে সম্পদের দক্ষ ব্যবহার, পরিবেশগত প্রভাব, সম্পূর্ণ জীবনচক্রের ব্যয়, সম্পদের পুনর্ব্যবহার, নিট শূন্য কার্বন এবং অনুরূপ ধারণা।" } },
+      { "code": "WK6", "text": { "en": "Knowledge of engineering practice (technology) in the practice areas in the engineering discipline.", "bn": "প্রকৌশল শাখাটির চর্চার ক্ষেত্রগুলোতে প্রকৌশল চর্চার (প্রযুক্তির) জ্ঞান।" } },
+      { "code": "WK7", "text": { "en": "Knowledge of the role of engineering in society and identified issues in engineering practice in the discipline, such as the professional responsibility of an engineer to public safety and sustainable development.", "bn": "সমাজে প্রকৌশলের ভূমিকা এবং এই শাখার প্রকৌশল চর্চায় চিহ্নিত বিষয়গুলোর জ্ঞান, যেমন জননিরাপত্তা ও টেকসই উন্নয়নের প্রতি একজন প্রকৌশলীর পেশাগত দায়িত্ব।" } },
+      { "code": "WK8", "text": { "en": "Engagement with selected knowledge in the research literature of the discipline.", "bn": "এই শাখার গবেষণা সাহিত্যের নির্বাচিত জ্ঞানের সঙ্গে সম্পৃক্ততা।" } },
+      { "code": "WK9", "text": { "en": "Knowledge of professional ethics, responsibilities, and norms of engineering practice. Awareness of the need for diversity by reason of ethnicity, gender, age, physical ability etc. with mutual understanding and respect, and of inclusive attitudes.", "bn": "পেশাগত নৈতিকতা, দায়িত্ব ও প্রকৌশল চর্চার রীতিনীতির জ্ঞান। জাতিগত পরিচয়, লিঙ্গ, বয়স, শারীরিক সক্ষমতা ইত্যাদির ভিত্তিতে বৈচিত্র্যের প্রয়োজনীয়তা সম্পর্কে পারস্পরিক বোঝাপড়া ও শ্রদ্ধাসহ সচেতনতা এবং অন্তর্ভুক্তিমূলক মনোভাব।" } }
+    ],
+    "peoPmMap": { "PEO1": ["PM1"], "PEO2": ["PM1", "PM2"], "PEO3": ["PM4"], "PEO4": ["PM3"], "PEO5": ["PM3"] }
+  },
+
+  "noticeCategories": [
+    { "slug": "academic", "name": { "en": "Academic", "bn": "একাডেমিক" } },
+    { "slug": "exam", "name": { "en": "Exam", "bn": "পরীক্ষা" } },
+    { "slug": "admission", "name": { "en": "Admission", "bn": "ভর্তি" } },
+    { "slug": "events", "name": { "en": "Events", "bn": "অনুষ্ঠান" } },
+    { "slug": "general", "name": { "en": "General", "bn": "সাধারণ" } }
+  ],
+
+  "pageSeo": {
+    "academics": { "title": { "en": "Academics", "bn": "একাডেমিক" }, "description": { "en": "Programs offered by the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের প্রোগ্রামসমূহ।" } },
+    "curriculum": { "title": { "en": "Curriculum", "bn": "পাঠ্যক্রম" }, "description": { "en": "Eight-semester curriculum of the B.Sc. in CSE program.", "bn": "বি.এসসি. ইন সিএসই প্রোগ্রামের আট সেমিস্টারের পাঠ্যক্রম।" } },
+    "obe": { "title": { "en": "OBE Framework", "bn": "ওবিই কাঠামো" }, "description": { "en": "Graduate attributes, PEOs, POs and knowledge profile of the B.Sc. in CSE program.", "bn": "বি.এসসি. ইন সিএসই প্রোগ্রামের স্নাতকের বৈশিষ্ট্য, পিইও, পিও ও জ্ঞান প্রোফাইল।" } },
+    "faculty": { "title": { "en": "Faculty and Staff", "bn": "শিক্ষক ও কর্মকর্তা" }, "description": { "en": "Faculty members, officers and staff of the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের শিক্ষক, কর্মকর্তা ও কর্মচারী।" } },
+    "research": { "title": { "en": "Research and Labs", "bn": "গবেষণা ও ল্যাব" }, "description": { "en": "Research areas, laboratories and publications of the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের গবেষণার ক্ষেত্র, ল্যাবরেটরি ও প্রকাশনা।" } },
+    "notices": { "title": { "en": "Notices", "bn": "নোটিশ" }, "description": { "en": "Academic, exam, admission and general notices from the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের একাডেমিক, পরীক্ষা, ভর্তি ও সাধারণ নোটিশ।" } },
+    "downloads": { "title": { "en": "Downloads", "bn": "ডাউনলোড" }, "description": { "en": "Forms, routines, syllabus and curriculum PDFs.", "bn": "ফরম, রুটিন, সিলেবাস ও পাঠ্যক্রমের পিডিএফ।" } },
+    "events": { "title": { "en": "News and Events", "bn": "সংবাদ ও অনুষ্ঠান" }, "description": { "en": "News and upcoming events of the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের সংবাদ ও আসন্ন অনুষ্ঠান।" } },
+    "contact": { "title": { "en": "Contact", "bn": "যোগাযোগ" }, "description": { "en": "Address, phone, email and office hours of the Department of CSE, EBAUB.", "bn": "ইবিএইউবি সিএসই বিভাগের ঠিকানা, ফোন, ইমেইল ও অফিস সময়।" } }
+  }
+}
