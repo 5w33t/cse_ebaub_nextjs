@@ -259,6 +259,57 @@ html[lang="bn"] .eyebrow {
   box-shadow: 0 0 0 1px var(--hairline);
 }
 
+/* Enter/exit animations for overlays and menus (transform + opacity only) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@utility anim-fade-in { animation: fade-in 500ms var(--ease-out-expo) both; }
+@utility anim-fade-out { animation: fade-out 300ms var(--ease-out-expo) both; }
+@utility anim-pop-in { animation: pop-in 600ms var(--ease-out-expo) both; }
+@utility anim-rise-in { animation: rise-in 500ms var(--ease-out-expo) both; }
+@utility anim-slide-in-left { animation: slide-in-left 600ms var(--ease-out-expo) both; }
+
+/* Rich text rendering (Tiptap editor and public prose) */
+@utility prose-academic {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  & > * + * { margin-top: 0.9em; }
+  & h2 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.2; margin-top: 1.6em; }
+  & h3 { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.25; margin-top: 1.4em; }
+  & h4 { font-weight: 600; margin-top: 1.2em; }
+  & a { color: var(--secondary-text); text-decoration: underline; text-underline-offset: 3px; }
+  & ul, & ol { padding-left: 1.4em; }
+  & ul { list-style: disc; }
+  & ol { list-style: decimal; }
+  & li + li { margin-top: 0.3em; }
+  & blockquote { border-left: 2px solid var(--accent); padding-left: 1em; color: var(--ink-muted); font-style: italic; }
+  & code { font-family: var(--font-mono); font-size: 0.9em; background: var(--paper-2); padding: 0.1em 0.35em; border-radius: 0.35em; }
+  & pre { font-family: var(--font-mono); font-size: 0.875rem; background: var(--paper-2); padding: 1em; border-radius: 1rem; overflow-x: auto; }
+  & hr { border: 0; height: 1px; background: var(--hairline); margin: 2em 0; }
+  & table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+  & th, & td { text-align: left; padding: 0.6em 0.75em; box-shadow: inset 0 -1px 0 var(--hairline); vertical-align: top; }
+  & th { font-weight: 600; }
+  & img { border-radius: 1rem; max-width: 100%; height: auto; }
+}
+
 /* Site container */
 @utility container-site {
   width: 100%;

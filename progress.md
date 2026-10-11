@@ -10,8 +10,8 @@ working session: move items between sections, add dates, note blockers.
 | --- | --- | --- |
 | 1 | Foundation: tokens, fonts, locale routing, cacheComponents, Firebase modules, schemas, asset manifest, brand exports | Done 2026-10-11 (commit 53fa4c9) |
 | 2 | Auth: login, session cookie route, proxy, requireAdmin, set-admin script, Firestore rules and indexes | Done 2026-10-11 (commit 53fa4c9) |
-| 3 | Seed: `scripts/seed.ts` from `scripts/seed/content.json` + syllabus markdown | Built and dry-run verified 2026-10-11; real run blocked on `.env.local` |
-| 4 | Admin CMS: shell, form builder, image library, pickers, modules, translation-gap widget | Not started |
+| 3 | Seed: `scripts/seed.ts` from `scripts/seed/content.json` + syllabus markdown | Done 2026-10-11; real run wrote 99 docs to `ebaub-cse` (commit 7242496 + 0c9c6d7) |
+| 4 | Admin CMS: shell, form builder, image library, pickers, modules, translation-gap widget | Built 2026-10-11; build + authenticated smoke test green; needs a manual browser pass (see below) |
 | 5 | Public site: utility bar, floating nav, footer, Home, About, Academics, OBE, Faculty, Notices, Events, Research, Downloads, Contact | Not started |
 | 6 | Polish: SEO + hreflang, sitemap, OG images, a11y audit, contrast report, Lighthouse, empty states, not-found | Not started |
 | 7 | Deploy: Vercel, env vars, `firebase deploy --only firestore`, authorized domains, first super admin | Not started |
@@ -33,16 +33,40 @@ working session: move items between sections, add dates, note blockers.
 - CSE 4100, CSE 4200, CSE 4205 have no recommended books; CSE 4205 (Industrial Attachment) has no outline.
 - Course Status "GED" appears on some courses; stored as `courseStatus: "ged"`.
 
-## Next up: step 4 (Admin CMS)
+## Step 4 (Admin CMS) summary
 
-- [ ] Install shadcn/ui (dialog, tabs, accordion, form primitives) and Tiptap
-- [ ] Admin shell: sidebar groups from the spec (3.2), responsive, lucide icons allowed here
-- [ ] Generic list/table + zod-driven form builder with localized-field (EN | বাংলা) control
-- [ ] Image Library (reads `lib/generated/asset-manifest.json`) and image/file pickers, Phosphor icon picker
-- [ ] Server Actions per content type: validate → requireAdminForAction → sanitize HTML → write → revision → audit → updateTag
-- [ ] Modules: Pages, Academics, People, Content, Inbox, Settings (incl. UI labels table), Users, Activity log
-- [ ] Dashboard with missing-Bangla count
-- [ ] Draft Mode preview, bulk actions, scheduling
+Built on Radix primitives (`radix-ui`), Tiptap 3, dnd-kit, sonner. shadcn's CLI was skipped because its init overwrites `globals.css`; components are hand-written to the design tokens instead.
+
+- `lib/admin/registry.ts` is the single description of every content type: path, zod schema, field specs, list columns, cache tag, preview path, min role. Adding a content type = one registry entry.
+- `lib/admin/fields.ts` field kinds: text, textarea, slug, email, url, number, boolean, date, datetime, select, lstr, lstrarea, lhtml, image, file, icon, tags, list (sortable, or bare image/file items), object, json.
+- `components/admin/form/*`: FormBuilder (recursive), LocalizedInput with EN | বাংলা switch and missing-dot, RichTextField (Tiptap, one instance per locale), ImagePicker/FilePicker over the asset manifest, IconPicker (curated Phosphor set in `lib/icons.ts`), Repeatable (dnd-kit), DocumentEditor (status, save, preview via Draft Mode, history/restore, delete, unsaved guard).
+- `lib/actions/content.ts`: saveDocument (validate → sanitize lhtml → role rules → revision snapshot (keep 20) → write → audit → updateTag), deleteDocument, bulkSetStatus, bulkDelete, restoreRevision, messages, saveUiLabels. `lib/actions/users.ts`: invite (returns password-setup link), setUserRole, setUserDisabled, revokeUserSessions.
+- Routes: `/admin` dashboard (bento stats, translation gaps, recent activity), `/admin/pages/[page]` singletons (home, about, missionVision, chairmanMessage, contact, site, obe), `/admin/content/[collection]` list with search/status/bulk, `/admin/content/[collection]/[id|new]`, `/admin/images`, `/admin/settings/ui-labels`, `/admin/users`, `/admin/activity`, `/admin/inbox`, `/api/draft` + `/api/draft/disable`.
+- **Security finding fixed:** under Cache Components the layout and page render in parallel, so a layout-only gate still streams page data for a forged cookie. Every admin page now calls `requireAdmin()` itself; `scripts/smoke-admin.ts` asserts no leak.
+- **Firestore bug fixed:** `settings()` guard moved to `globalThis` because Next loads `admin-core.ts` once per bundle.
+- Verify: `npx next build`, then `npx next start -p 3100` and `npx tsx scripts/smoke-admin.ts <admin email>` (20 checks).
+
+### Manual browser pass still needed (cannot be scripted here)
+
+- [ ] Log in at `/admin/login` with the real password; forgot-password email
+- [ ] Edit Home → change a headline in both locales → Save → Preview opens Draft Mode
+- [ ] Reorder hero items / mission cards by drag; add and remove list items
+- [ ] Rich text: formatting toolbar, link dialog, switching EN/বাংলা keeps both texts
+- [ ] Image picker alt text validation; file picker external https link
+- [ ] Create a notice from `/admin/content/notices/new`, publish, bulk unpublish, delete
+- [ ] History → Restore
+- [ ] Users → Invite (copy setup link), role change, disable
+- [ ] Mobile: hamburger morph, staggered overlay links
+- [ ] Dark mode on every admin page
+
+## Next up: step 5 (Public site)
+
+- [ ] `app/(site)/[locale]/(public)/layout.tsx`: utility strip (university link, locale switch, theme toggle) + floating glass nav (condenses on scroll, mobile overlay) + editorial footer, all from `settings/site` and `settings/ui`
+- [ ] `lib/content/*` cached fetchers per type (`'use cache'`, `cacheLife('max')`, `cacheTag`) honouring Draft Mode for previews
+- [ ] Home: editorial split hero (slider variant), bento stats with locale-aware counters, chairman teaser, mission cards, latest notices, events, faculty strip
+- [ ] About, Chairman, Academics, Curriculum (8 semester tabs), Course detail, OBE, Faculty list + profile, Research, Notices list + detail (client-side search), Downloads, Events list + detail, Contact (+ form writing to `messages`)
+- [ ] Motion: `whileInView` blur-up reveals, stagger, reduced-motion fallback
+- [ ] Replace the temporary specimen page; lint rule against string literals in `app/(site)/**`
 
 ## Blocked / waiting on the department
 
@@ -56,12 +80,12 @@ working session: move items between sections, add dates, note blockers.
 - Confirmation of the syllabus source issues listed above
 - Vector logo, if one exists
 
-## Environment setup still needed
+## Environment (done 2026-10-11)
 
-- `.env.local` from `.env.example` (Firebase web config + service account)
-- Create first admin user in Firebase console, then `npm run set-admin -- <email> superAdmin`
-- `firebase deploy --only firestore` (rules + indexes); the current deployed test rules expire 2026-11-03
-- Then `npm run seed` (first real run)
+- `.env.local` present (lines 15–19 use `:` instead of `=` and are ignored; harmless)
+- Super admin: sweet.csevu@gmail.com (claim verified with `npx tsx scripts/check-admin.ts <email>`)
+- Production rules + 4 composite indexes deployed to `ebaub-cse` with `firebase deploy --only firestore`
+- `npm run seed` wrote 99 documents; a second run skipped all 99 (idempotent)
 
 ## Decisions log
 

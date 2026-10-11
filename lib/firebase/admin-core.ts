@@ -7,7 +7,11 @@ import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
 let app: App | undefined;
-let firestoreReady = false;
+
+// Next.js bundles server components, route handlers and server actions separately, so this module can be
+// instantiated more than once per process while the Firestore client (cached per app) is shared.
+// The "settings() once" guard therefore has to live on globalThis, not in module scope.
+const globalFlags = globalThis as unknown as { __ebaubFirestoreConfigured?: boolean };
 
 function getAdminApp(): App {
   if (app) return app;
@@ -34,9 +38,13 @@ export function adminAuth() {
 
 export function adminDb() {
   const db = getFirestore(getAdminApp());
-  if (!firestoreReady) {
-    db.settings({ ignoreUndefinedProperties: true });
-    firestoreReady = true;
+  if (!globalFlags.__ebaubFirestoreConfigured) {
+    try {
+      db.settings({ ignoreUndefinedProperties: true });
+    } catch {
+      // Already configured by another bundle; the shared instance keeps its settings.
+    }
+    globalFlags.__ebaubFirestoreConfigured = true;
   }
   return db;
 }
